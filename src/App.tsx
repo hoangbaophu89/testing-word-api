@@ -405,7 +405,7 @@ function App() {
               const formData = new FormData();
               formData.append('promptString', prompt.current);
               formData.append('file', fileRef.current, 'filename.jpg');
-              axios.post('https://cuai.azurewebsites.net/api/GPT4Vision?code=2Q8qqTp2bluQcJuz-cPm97ztbEOARps_J4sGhv5ZxfGWAzFuGW-eGA==', formData)
+              axios.post('https://cuai.azurewebsites.net/api/GPT4Vision?code=', formData)
                 .then(resultAnlayze => {
                   setAnaRes(resultAnlayze)
                   setLoading(false);
