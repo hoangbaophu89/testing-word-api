@@ -393,6 +393,7 @@ function App() {
         </div>
 
         <input type="file"
+          accept="image/png, image/jpeg, image/gif, application/pdf"
           onChange={(e: any) => {
             const [file] = e.target.files;
             fileRef.current = file;
@@ -405,7 +406,7 @@ function App() {
               const formData = new FormData();
               formData.append('promptString', prompt.current);
               formData.append('file', fileRef.current, 'filename.jpg');
-              axios.post('https://cuai.azurewebsites.net/api/GPT4Vision?code=', formData)
+              axios.post('http://localhost:7176/api/GPT4Vision', formData)
                 .then(resultAnlayze => {
                   setAnaRes(resultAnlayze)
                   setLoading(false);
